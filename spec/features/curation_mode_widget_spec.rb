@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe "Curation Mode Widget" do
   let(:exhibit_curator) { FactoryGirl.create(:exhibit_curator) }
-  let(:doc_id) { "dq287tq6352" }
+  let(:doc_id) { "gn425sk0502" }
   before {login_as exhibit_curator}
   describe "on the edit page" do
     it "should have text indicating that the user is in curation mode and a link to turn it off" do

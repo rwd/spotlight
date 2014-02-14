@@ -16,7 +16,14 @@ class Spotlight::Search < ActiveRecord::Base
   end
 
   def images
-    query_solr(query_params, rows: 1000, fl: [blacklight_config.index.title_field, blacklight_config.index.thumbnail_field], facet: false)['response']['docs'].map {|result| [result[blacklight_config.index.title_field].first, result[blacklight_config.index.thumbnail_field].first]}
+    query_solr(query_params, rows: 1000, fl: [blacklight_config.index.title_field, blacklight_config.index.thumbnail_field], facet: false)['response']['docs'].map do |result| 
+      doc = ::SolrDocument.new(result)
+
+      [
+        doc.first(blacklight_config.index.title_field),
+        doc.first(blacklight_config.index.thumbnail_field)
+      ]
+    end.compact
   end
 
   def default_featured_image

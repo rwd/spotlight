@@ -28,7 +28,7 @@ feature "Record Thumbnail Block" do
     find("a[data-type='item-text']").click
     # fill in the record ID field
     expect(page).to have_css("input#item-id")
-    fill_in "item-id", :with => "dq287tq6352"
+    fill_in "item-id", :with => "gn425sk0502"
     # create the page
     click_button("Save changes")
     # veryify that the page was created
@@ -66,7 +66,7 @@ feature "Record Thumbnail Block" do
     find("a[data-type='item-text']").click
     # fill in the record ID field
     expect(page).to have_css("input#item-id")
-    fill_in "item-id", :with => "dq287tq6352"
+    fill_in "item-id", :with => "gn425sk0502"
     # display the title
     check("Display title")
     # create the page
@@ -107,7 +107,7 @@ feature "Record Thumbnail Block" do
     find("a[data-type='item-text']").click
     # fill in the record ID field
     expect(page).to have_css("input#item-id")
-    fill_in "item-id", :with => "dq287tq6352"
+    fill_in "item-id", :with => "gn425sk0502"
     # fill in the text area
     fill_in "item-text", with: "Some text to annotate this image."
     # create the page
@@ -145,7 +145,7 @@ feature "Record Thumbnail Block" do
     find("a[data-type='item-text']").click
     # fill in the record ID field
     expect(page).to have_css("input#item-id")
-    fill_in "item-id", :with => "dq287tq6352"
+    fill_in "item-id", :with => "gn425sk0502"
     # fill in the text area
     fill_in "item-text", with: "Some text to annotate this image."
     # Select to align the text right

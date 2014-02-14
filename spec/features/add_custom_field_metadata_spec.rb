@@ -11,7 +11,7 @@ describe "Adding custom metadata field data" do
   end
 
   it "should work" do
-    visit spotlight.exhibit_catalog_path(Spotlight::Exhibit.default, "dq287tq6352")
+    visit spotlight.exhibit_catalog_path(Spotlight::Exhibit.default, "gn425sk0502")
 
     expect(page).to have_link "Enter curation mode."
 
@@ -21,9 +21,9 @@ describe "Adding custom metadata field data" do
 
     click_on "Save changes"
 
-    expect(::SolrDocument.find("dq287tq6352").sidecar(Spotlight::Exhibit.default).data).to include "field_name" => "My new custom field value"
+    expect(::SolrDocument.find("gn425sk0502").sidecar(Spotlight::Exhibit.default).data).to include "field_name" => "My new custom field value"
 
-    visit spotlight.exhibit_catalog_path(Spotlight::Exhibit.default, "dq287tq6352")
+    visit spotlight.exhibit_catalog_path(Spotlight::Exhibit.default, "gn425sk0502")
 
     expect(page).to have_content "Some Field"
     expect(page).to have_content "My new custom field value"

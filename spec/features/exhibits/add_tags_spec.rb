@@ -9,7 +9,7 @@ describe "Add tags to an item in an exhibit" do
   end
 
   it "should change and display the of tags" do
-    visit spotlight.exhibit_catalog_path(Spotlight::Exhibit.default, "dq287tq6352")
+    visit spotlight.exhibit_catalog_path(Spotlight::Exhibit.default, "gn425sk0502")
 
     expect(page).to have_link "Enter curation mode."
 
@@ -19,7 +19,7 @@ describe "Add tags to an item in an exhibit" do
 
     click_on "Save changes"
 
-    visit spotlight.exhibit_catalog_path(Spotlight::Exhibit.default, "dq287tq6352")
+    visit spotlight.exhibit_catalog_path(Spotlight::Exhibit.default, "gn425sk0502")
 
     within("ul.tags") do
       expect(page).to have_selector  "li", text: "One"

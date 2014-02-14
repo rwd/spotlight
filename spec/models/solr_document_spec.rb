@@ -17,7 +17,7 @@ describe SolrDocument do
   end
 
   it "should have find" do
-    expect(::SolrDocument.find('dq287tq6352')).to be_kind_of SolrDocument
+    expect(::SolrDocument.find('pz918yt4565')).to be_kind_of SolrDocument
   end
 
   describe "#sidebar" do

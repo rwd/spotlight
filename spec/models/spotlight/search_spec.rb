@@ -13,12 +13,12 @@ describe Spotlight::Search do
   end
 
   it "should have items" do
-    expect(subject.count).to eq 55
+    expect(subject.count).to eq 246
   end
 
   it "should have images" do
-    subject.images.size.should == 55
-    expect(subject.images.map(&:last)).to include "https://stacks.stanford.edu/image/dq287tq6352/dq287tq6352_05_0001_thumb", "https://stacks.stanford.edu/image/jp266yb7109/jp266yb7109_05_0001_thumb"
+    expect(subject.images.size).to eq 246
+    expect(subject.images.map(&:last)).to include "https://stacks.stanford.edu/image/pz918yt4565/AM_0425_thumb", "https://stacks.stanford.edu/image/rg099nx3058/AM_0429_thumb"
   end
 
   describe "default_scope" do
