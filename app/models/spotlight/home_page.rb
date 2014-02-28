@@ -7,7 +7,7 @@ module Spotlight
     before_create :default_content
 
     def should_display_title?
-      display_title
+      display_title?
     end
 
     private
@@ -25,8 +25,8 @@ module Spotlight
     end
 
     def default_content
-      self.title = Spotlight::HomePage.default_title_text
-      self.content = {
+      self.title ||= Spotlight::HomePage.default_title_text
+      self.content ||= {
         "data" => [
           {"type" => "text",
            "data" => {
