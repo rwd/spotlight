@@ -16,7 +16,7 @@ module Spotlight
     end
 
     def self.default_title_text
-      "Exhibit Home"
+      I18n.t('spotlight.pages.index.home_pages.title')
     end
 
     def publish
