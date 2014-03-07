@@ -4,6 +4,9 @@ class Spotlight::ExhibitsController < Spotlight::ApplicationController
 
   load_and_authorize_resource
 
+  def list
+  end
+
   def new
   end
 

@@ -1,0 +1,23 @@
+<h1>Here's a list of points</h1>
+
+<table id="map-points" class="table table-striped">
+  <thead>
+    <tr><th>ID</th><th>Title</th><th>Lat</th><th>Long</th></tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<script>
+  var q = "Observations"
+  var row =  Handlebars.compile(
+    '<tr><td>{{id}}</td><td>{{title}}</td><td>{{lat}}</td><td>{{lng}}</td></tr>'
+  )
+  var url = 'catalog/map_points.json?q='+q
+  $.get(url, function(data, stat) {
+    $.each(data.docs, function(i, doc) {
+      $("#map-points tbody").append(row(doc));
+    });
+  });
+
+</script>

@@ -56,6 +56,26 @@ class Spotlight::CatalogController < Spotlight::ApplicationController
     end
   end
 
+  def map_points
+    limit_result_size = { rows: 1000 }
+    fields_to_return = {fl: "id #{blacklight_config.index.title_field} lat lng"}
+    only_points = {fq:["lat:[* TO *] AND lng:[* TO *]"]}
+    solr_options = fields_to_return.merge(only_points).merge(limit_result_size)
+    (_, @document_list) = get_search_results(params, solr_options)
+
+    respond_to do |format|
+      format.json do
+        render json: {
+          docs: @document_list.map do |doc|
+            doc.reject{ |k, _| k == blacklight_config.index.title_field}.merge({title: view_context.presenter(doc).raw_document_heading})
+          end
+        }
+      end
+    end
+  end
+
+
+
   def admin
     self.blacklight_config.view.reject! { |k,v| true }
     self.blacklight_config.view.admin_table.partials = [:index_compact]

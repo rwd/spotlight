@@ -8,6 +8,7 @@ Spotlight::Engine.routes.draw do
       get 'import', to: 'exhibits#import'
       post 'import', to: 'exhibits#process_import'
       patch 'import', to: 'exhibits#process_import'
+      get 'list'
     end
 
     resources :attachments, only: :create
@@ -24,6 +25,7 @@ Spotlight::Engine.routes.draw do
       collection do
         get 'admin'
         get 'autocomplete'
+        get 'map_points'
       end
 
       get "facet/:id", :to => "catalog#facet", :as => "catalog_facet"
