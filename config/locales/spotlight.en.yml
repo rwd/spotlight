@@ -264,6 +264,7 @@ en:
         no_documents: There are no documents in this exhibit
       analytics:
         header: "User Activity Over the Past Month"
+        error: "Error retrieving analytics data"
         pageviews: "page views"
         users: "unique visits"
         sessions: "visitors"
